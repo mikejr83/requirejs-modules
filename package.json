@@ -36,7 +36,7 @@
     "zone.js": "^0.8.4"
   },
   "scripts": {
-    "prebuild": "rimraf www/js/ng-app.js",
+    "prebuild": "rimraf assets/js/*.bundle.js",
     "build": "webpack",
     "postbuild": "",
     "debug": "node debug app.js",

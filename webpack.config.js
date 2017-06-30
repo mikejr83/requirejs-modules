@@ -79,16 +79,16 @@ module.exports = {
     "main": [
       "./ng-lib\\main.ts"
     ],
-    // "polyfills": [
-    //   "./src\\polyfills.ts"
-    // ],
+    "polyfills": [
+      "./ng-lib\\polyfills.ts"
+    ],
     // "styles": [
     //   "./src\\styles.css"
     // ]
   },
   "output": {
     // "path": path.join(process.cwd(), "dist"),
-    path: path.join(__dirname, "www/js"),
+    path: path.join(__dirname, "assets/js"),
     "filename": "[name].bundle.js",
     "chunkFilename": "[id].chunk.js",
     library: 'ngMe',
@@ -428,9 +428,9 @@ module.exports = {
     new NamedModulesPlugin({}),
     new AotPlugin({
       entryModule: 'app\\app.module#AppModule',
-      // "hostReplacementPaths": {
-      //   "environments\\environment.ts": "environments\\environment.ts"
-      // },
+      "hostReplacementPaths": {
+        "environments\\environment.ts": "environments\\environment.ts"
+      },
       "exclude": [],
       "tsConfigPath": "ng-lib\\tsconfig.app.json",
       "skipCodeGeneration": true

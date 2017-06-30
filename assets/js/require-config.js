@@ -20,7 +20,7 @@
     }
   });
 
-  require(['sails', 'socketio', './bootstrapper', './helloWorldController'], function (sails, io, bootstrapper) {
+  require(['sails', 'socketio', './bootstrapper', './helloWorldController', 'ngMe'], function (sails, io, bootstrapper, ngMe) {
     if (root.document) {
       bootstrapper(root.document);
     }
