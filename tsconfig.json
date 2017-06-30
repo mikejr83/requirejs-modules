@@ -1,5 +1,8 @@
 {
+  "compileOnSave": false,
   "compilerOptions": {
+    "outDir": "./dist/out-tsc",
+    "baseUrl": "ng-lib",
     "noImplicitAny": false,
     "module": "amd",
     "moduleResolution": "node",
@@ -7,10 +10,16 @@
     "removeComments": true,
     "sourceMap": true,
     "target": "es6",
-    "typeRoots": ["node_modules/@types"],
-    "outDir": "app"
+    "declaration": false,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "typeRoots": ["node_modules/@types"]
   },
   "exclude": [
     "node_modules"
+  ],
+  "lib": [
+    "es2016",
+      "dom"
   ]
 }
