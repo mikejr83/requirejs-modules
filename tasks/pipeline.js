@@ -29,9 +29,7 @@ var jsFilesToInject = [
   'js/dependencies/require.js',
 
   'js/inline.bundle.js',
-  'js/polyfills.bundle.js',
   'js/vendor.bundle.js',
-  'js/main.bundle.js',
 
   // All of the rest of your client-side js files
   // will be injected here in no particular order.

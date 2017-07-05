@@ -91,7 +91,6 @@ module.exports = {
     path: path.join(__dirname, "assets/js"),
     "filename": "[name].bundle.js",
     "chunkFilename": "[id].chunk.js",
-    library: 'ngMe',
     libraryTarget: 'amd'
   },
   "module": {
@@ -101,7 +100,8 @@ module.exports = {
         "test": /\.js$/,
         "loader": "source-map-loader",
         "exclude": [
-          /\/node_modules\//
+          /\/node_modules\//,
+          path.join(__dirname, 'node_modules', '@angular/compiler')
         ]
       },
       {

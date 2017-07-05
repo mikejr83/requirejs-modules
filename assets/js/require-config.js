@@ -7,7 +7,10 @@
       "sails": "../js/dependencies/sails.io",
       "socketio": "../js/dependencies/socket.io",
       "angular": "../js/angular",
-      "jquery": "../js/dependencies/jquery.min"
+      "jquery": "../js/dependencies/jquery.min",
+      "polyfills": "../js/polyfills.bundle",
+      "vendor": "../js/vendor.bundle",
+      "main": "../js/main.bundle"
     },
     shim: {
       'jquery': {
@@ -16,13 +19,24 @@
       'angular': {
         exports: 'angular',
 
+      },
+      "vendor": {
+        deps: ['polyfills']
       }
     }
   });
 
-  require(['sails', 'socketio', './bootstrapper', './helloWorldController', 'ngMe'], function (sails, io, bootstrapper, ngMe) {
-    if (root.document) {
-      bootstrapper(root.document);
-    }
+  require(['sails', 'socketio', './app', './helloWorldController', 'polyfills'], function (sails, io, app, hwCtrl, polyfills) {
+    require(['vendor'], function (vendor) {
+      require(['main'], function (main) {
+        console.log(app);
+        console.log(main);
+         main.default().bootstrapModule(main.mainModule).then(function(mainModule){
+          console.log(mainModule.ngDoBootstrap);
+          mainModule.instance.upgrade.bootstrap(document.body, ['MyApp']);
+        })
+      });
+    });
+
   });
 }))

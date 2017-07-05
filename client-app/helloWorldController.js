@@ -11,4 +11,6 @@
     '$log',
     HelloWorldController
   ]);
+
+  return HelloWorldController;
 }));
