@@ -77,13 +77,13 @@ module.exports = {
   },
   "entry": {
     "main": [
-      "./ng-lib\\main.ts"
+      "./ng-lib/main.ts"
     ],
     "polyfills": [
-      "./ng-lib\\polyfills.ts"
+      "./ng-lib/polyfills.ts"
     ],
     // "styles": [
-    //   "./src\\styles.css"
+    //   "./src/styles.css"
     // ]
   },
   "output": {
@@ -122,7 +122,7 @@ module.exports = {
       },
       {
         "exclude": [
-          path.join(process.cwd(), "ng-lib\\styles.css")
+          path.join(process.cwd(), "ng-lib/styles.css")
         ],
         "test": /\.css$/,
         "use": [
@@ -145,7 +145,7 @@ module.exports = {
       },
       {
         "exclude": [
-          path.join(process.cwd(), "ng-lib\\styles.css")
+          path.join(process.cwd(), "ng-lib/styles.css")
         ],
         "test": /\.scss$|\.sass$/,
         "use": [
@@ -176,7 +176,7 @@ module.exports = {
       },
       {
         "exclude": [
-          path.join(process.cwd(), "ng-lib\\styles.css")
+          path.join(process.cwd(), "ng-lib/styles.css")
         ],
         "test": /\.less$/,
         "use": [
@@ -205,7 +205,7 @@ module.exports = {
       },
       {
         "exclude": [
-          path.join(process.cwd(), "ng-lib\\styles.css")
+          path.join(process.cwd(), "ng-lib/styles.css")
         ],
         "test": /\.styl$/,
         "use": [
@@ -235,7 +235,7 @@ module.exports = {
       },
       {
         "include": [
-          path.join(process.cwd(), "ng-lib\\styles.css")
+          path.join(process.cwd(), "ng-lib/styles.css")
         ],
         "test": /\.css$/,
         "use": [
@@ -258,7 +258,7 @@ module.exports = {
       },
       {
         "include": [
-          path.join(process.cwd(), "ng-lib\\styles.css")
+          path.join(process.cwd(), "ng-lib/styles.css")
         ],
         "test": /\.scss$|\.sass$/,
         "use": [
@@ -289,7 +289,7 @@ module.exports = {
       },
       {
         "include": [
-          path.join(process.cwd(), "ng-lib\\styles.css")
+          path.join(process.cwd(), "ng-lib/styles.css")
         ],
         "test": /\.less$/,
         "use": [
@@ -318,7 +318,7 @@ module.exports = {
       },
       {
         "include": [
-          path.join(process.cwd(), "ng-lib\\styles.css")
+          path.join(process.cwd(), "ng-lib/styles.css")
         ],
         "test": /\.styl$/,
         "use": [
@@ -373,7 +373,7 @@ module.exports = {
       "sourceRoot": "webpack:///"
     }),
     // new HtmlWebpackPlugin({
-    //   "template": "./src\\index.html",
+    //   "template": "./src/index.html",
     //   "filename": "./index.html",
     //   "hash": false,
     //   "inject": true,
@@ -427,12 +427,12 @@ module.exports = {
     }),
     new NamedModulesPlugin({}),
     new AotPlugin({
-      entryModule: 'app\\app.module#AppModule',
+      entryModule: 'app/app.module#AppModule',
       "hostReplacementPaths": {
-        "environments\\environment.ts": "environments\\environment.ts"
+        "environments/environment.ts": "environments/environment.ts"
       },
       "exclude": [],
-      "tsConfigPath": "ng-lib\\tsconfig.app.json",
+      "tsConfigPath": "ng-lib/tsconfig.app.json",
       "skipCodeGeneration": true
     })
   ],
