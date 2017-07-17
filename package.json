@@ -42,7 +42,6 @@
     "build": "webpack",
     "postbuild": "",
     "debug": "node debug app.js",
-    "prestart": "npm-run-all build",
     "start": "node app.js"
   },
   "main": "app.js",
